@@ -9,41 +9,42 @@
     8
   ],
   "total_bruto_por_modalidade": {
-    "4": 71,
-    "5": 3,
-    "8": 3208
+    "4": 391,
+    "5": 33,
+    "8": 4710
   },
   "amostra_objetos": [
-    "AMPLIAÇÃO E REQUALIFICAÇÃO DO PÓRTICO DE ENTRADA DO MUNICÍPIO DE PRACUÚBA-AP.",
-    "Registro de Preços para futura e eventual contratação de empresa especializada em engenharia especializada \nna prestação de serviços de manutenção pre",
-    "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA EXECUÇÃO DE OBRA DE REFORMA E ADEQUAÇÃO DA CÂMARA MUNICIPAL DE PORTEIRINHA/MG.",
-    "[LICITANET] - Contratação de Empresa Especializada para Execução da Obra de Pavimentação Asfáltica em CBUQ no Trecho 1 da estrada vicinal de acesso ao",
-    "EXECUÇÃO DE OBRAS E SERVIÇOS DE ENGENHARIA PARA A EXECUÇÃO DE REFORMA E AMPLIAÇÃO DA ESCOLA MUNICIPAL BENJAMIM COSTANT, NO MUNICIPIO DE SÃO JOÃO DO PA",
-    "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA ELABORAÇÃO E EXECUÇÃO DE TRABALHO SOCIAL EM OBRAS DE SANEAMENTO, conforme especificações e quantidades estab",
-    "Obras de contenção de encosta na Travessa Firmino e Travessa Ireno, nº 5 – Comunidade do Borel – Tijuca – AP 2.2 – RA VIII",
-    "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA EM ENGENHARIA PARA A PAVIMENTAÇÃO E CONSTRUÇÃO DE INFRAESTRUTURA DE ACESSO À PRAÇA FINLÂNDIA, EM ITATIAIA RJ (REV"
+    "Contratação de concessão onerosa de uso do espaço físico destinado à implantação e exploração de serviços de lanchonete, com área total de 45,62 m², n",
+    "Contratação de empresa de engenharia para execução das obras de Requalificação da Praça Amândio Ferraz, no Município de Belo Campo-BA.",
+    "contratação de empresa especializada de execução das obras de construção de 05 (cinco) Praças Públicas no Município de Juazeiro/BA",
+    "Contratação Integrada de empresa para elaboração dos Projetos Básico e Executivo de Engenharia e execução das obras de duplicação, restauração com mel",
+    "PAVIMENTAÇÃO EM PARALELEPIPEDO EM DIVERSAS RUAS NO BAIRRO LUIS ALVES, NO MUNICIPIO DE LIMOEIRO DO NORTE-CE",
+    "CONSTRUÇÃO DE PRAÇA DA IGREJA DA LOCALIDADE DE LAMEIRÃO NO MUNICIPIO DE COREAÚ/CE, JUNTO A SECRETARIA DE INFRAESTRUTURA E DESENVOLVIMENTO URBANO",
+    "PRESTAÇÃO, NO MODELO FACILITIES, DE SERVIÇOS DE MANUTENÇÃO PREVENTIVA E CORRETIVA DE AMBIENTES, COMPREENDENDO TODA A INFRAESTRUTURA, BEM COMO SERVIÇOS",
+    "Contratação de empresa especializada para construção de nova entrada de energia elétrica, incluindo subestação de energia, para o Centro Arquivístico ",
+    "Contratação de serviços especiais de engenharia para a readequação do Sistema Central de Gases Medicinais e readequação do Sistema de Contra Incêndio "
   ],
-  "novos_apos_filtro": 123,
+  "novos_apos_filtro": 283,
   "erros": [
     {
+      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=AP",
+      "erro": "TimeoutError: The read operation timed out"
+    },
+    {
       "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=AM",
-      "erro": "TimeoutError: The read operation timed out"
+      "erro": "HTTP 503: <html><body><h1>503 Service Unavailable</h1>\nNo server is available to handle this request.\n</body></html>\n"
     },
     {
-      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=BA",
-      "erro": "HTTP 500: Erro na comunicação com o banco de dados."
+      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=MS",
+      "erro": "HTTP 429: <html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Limite de Requisições Excedido</title>\n</head>\n<body>\n    <h2>Limite de requisições excedido</h2>\n\n    <p>\n        O limite de requisições foi excedido. Aguarde alguns instantes antes de realizar uma nova requisição.\n    </p>\n\n    <p>\n        Seu S"
     },
     {
-      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=CE",
-      "erro": "TimeoutError: The read operation timed out"
+      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=MG",
+      "erro": "HTTP 429: <html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Limite de Requisições Excedido</title>\n</head>\n<body>\n    <h2>Limite de requisições excedido</h2>\n\n    <p>\n        O limite de requisições foi excedido. Aguarde alguns instantes antes de realizar uma nova requisição.\n    </p>\n\n    <p>\n        Seu S"
     },
     {
-      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=DF",
-      "erro": "TimeoutError: The read operation timed out"
-    },
-    {
-      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=ES",
-      "erro": "TimeoutError: The read operation timed out"
+      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=RJ",
+      "erro": "HTTP 429: <html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Limite de Requisições Excedido</title>\n</head>\n<body>\n    <h2>Limite de requisições excedido</h2>\n\n    <p>\n        O limite de requisições foi excedido. Aguarde alguns instantes antes de realizar uma nova requisição.\n    </p>\n\n    <p>\n        Seu S"
     }
   ]
 }
