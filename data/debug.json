@@ -1,0 +1,18 @@
+{
+  "janela": {
+    "data_inicial": "20260916",
+    "data_final": "20260918"
+  },
+  "modalidades_consultadas": [
+    4,
+    5,
+    8
+  ],
+  "total_bruto_por_modalidade": {
+    "4": 0,
+    "5": 0,
+    "8": 0
+  },
+  "amostra_objetos": [],
+  "novos_apos_filtro": 0
+}
