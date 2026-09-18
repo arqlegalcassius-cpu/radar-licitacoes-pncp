@@ -59,7 +59,7 @@ MODALIDADES = [int(m) for m in env_or_default("MODALIDADES", "4,5,8").split(",")
 # 2 dias dá uma margem de segurança contra falhas/atrasos de execução.
 DIAS_RETROATIVOS = int(env_or_default("DIAS_RETROATIVOS", "2"))
 
-TAMANHO_PAGINA = 500  # máximo permitido pela API
+TAMANHO_PAGINA = 50  # a API do PNCP passou a rejeitar valores maiores (HTTP 400) apesar do manual antigo citar até 500
 
 WHATSAPP_PHONE = os.environ.get("WHATSAPP_PHONE", "")       # ex: 5521999999999
 CALLMEBOT_APIKEY = os.environ.get("CALLMEBOT_APIKEY", "")
