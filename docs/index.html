@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Radar de Licitações — PNCP</title>
+<style>
+  :root{
+    --azul-planta: #0f1f33;
+    --azul-planta-2: #16304f;
+    --linha-planta: rgba(255,255,255,0.09);
+    --papel: #eef1f4;
+    --texto: #d9e2ec;
+    --texto-fraco: #8fa3b8;
+    --laranja: #e0722c;
+    --verde-ok: #4caf7d;
+    --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+    --sans: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:
+      linear-gradient(var(--linha-planta) 1px, transparent 1px) 0 0/40px 40px,
+      linear-gradient(90deg, var(--linha-planta) 1px, transparent 1px) 0 0/40px 40px,
+      var(--azul-planta);
+    color:var(--texto);
+    font-family:var(--sans);
+    min-height:100vh;
+  }
+  header{
+    padding:32px 24px 20px;
+    border-bottom:1px solid var(--linha-planta);
+    display:flex; flex-wrap:wrap; align-items:baseline; gap:16px 28px;
+  }
+  header h1{
+    font-family:var(--mono);
+    font-weight:600;
+    font-size:1.35rem;
+    letter-spacing:0.02em;
+    margin:0;
+    color:var(--papel);
+  }
+  header .sub{ color:var(--texto-fraco); font-size:0.92rem; }
+  #atualizado{ font-family:var(--mono); font-size:0.82rem; color:var(--texto-fraco); }
+
+  .filtros{
+    display:flex; gap:8px; flex-wrap:wrap;
+    padding:16px 24px; border-bottom:1px solid var(--linha-planta);
+  }
+  .filtros button{
+    font-family:var(--mono);
+    background:transparent;
+    border:1px solid var(--linha-planta);
+    color:var(--texto);
+    padding:7px 14px;
+    border-radius:2px;
+    cursor:pointer;
+    font-size:0.85rem;
+  }
+  .filtros button.ativo{ border-color:var(--laranja); color:var(--laranja); }
+
+  main{ max-width:980px; margin:0 auto; padding:20px 24px 60px; }
+
+  .item{
+    border:1px solid var(--linha-planta);
+    border-left:3px solid var(--azul-planta-2);
+    padding:16px 18px;
+    margin-bottom:12px;
+    background:rgba(255,255,255,0.02);
+  }
+  .item.demolicao{ border-left-color:var(--laranja); }
+  .item.construcao{ border-left-color:var(--verde-ok); }
+  .item.reforma{ border-left-color:#6fa8dc; }
+
+  .item .topo{
+    display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    margin-bottom:6px;
+  }
+  .categoria{
+    font-family:var(--mono); font-size:0.72rem; letter-spacing:0.06em;
+    color:var(--texto-fraco);
+  }
+  .local{ font-family:var(--mono); font-size:0.82rem; color:var(--papel); }
+  .objeto{ font-size:0.95rem; line-height:1.45; margin:6px 0 10px; }
+  .resumo{
+    font-size:0.88rem; color:var(--texto-fraco); line-height:1.5;
+    border-top:1px dashed var(--linha-planta); padding-top:8px; margin-top:8px;
+    white-space:pre-line;
+  }
+  .meta{
+    display:flex; gap:18px; flex-wrap:wrap;
+    font-family:var(--mono); font-size:0.78rem; color:var(--texto-fraco);
+  }
+  .meta a{ color:#6fa8dc; text-decoration:none; }
+  .meta a:hover{ text-decoration:underline; }
+
+  .vazio{ color:var(--texto-fraco); padding:40px 0; text-align:center; font-family:var(--mono); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>RADAR DE LICITAÇÕES</h1>
+  <span class="sub">Demolição · Construção · Reforma — todas as UFs, via PNCP</span>
+  <span id="atualizado"></span>
+</header>
+
+<div class="filtros" id="filtros">
+  <button data-cat="todas" class="ativo">todas</button>
+  <button data-cat="demolicao">demolição</button>
+  <button data-cat="construcao">construção</button>
+  <button data-cat="reforma">reforma</button>
+</div>
+
+<main id="lista">
+  <p class="vazio">Carregando…</p>
+</main>
+
+<script>
+const LABEL = { demolicao: "DEMOLIÇÃO", construcao: "CONSTRUÇÃO", reforma: "REFORMA" };
+let TODOS = [];
+let filtroAtual = "todas";
+
+function formatarValor(v){
+  if (v === null || v === undefined || v === "") return "não informado";
+  const n = Number(v);
+  if (Number.isNaN(n)) return "não informado";
+  return n.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+}
+function formatarData(d){
+  if (!d) return "não informada";
+  const dt = new Date(d);
+  if (isNaN(dt)) return d.slice(0,10);
+  return dt.toLocaleDateString("pt-BR");
+}
+
+function render(){
+  const lista = document.getElementById("lista");
+  const itens = filtroAtual === "todas" ? TODOS : TODOS.filter(i => i.categoria === filtroAtual);
+  if (itens.length === 0){
+    lista.innerHTML = '<p class="vazio">Nenhuma oportunidade encontrada ainda nesta categoria.</p>';
+    return;
+  }
+  lista.innerHTML = itens.map(i => `
+    <div class="item ${i.categoria}">
+      <div class="topo">
+        <span class="categoria">${LABEL[i.categoria] || i.categoria}</span>
+        <span class="local">${i.municipio || ""}${i.municipio ? "/" : ""}${i.uf || ""} — ${i.orgao || ""}</span>
+      </div>
+      <div class="objeto">${i.objeto || ""}</div>
+      ${i.resumo_ia ? `<div class="resumo">${i.resumo_ia}</div>` : ""}
+      <div class="meta">
+        <span>modalidade: ${i.modalidade || "—"}</span>
+        <span>valor est.: ${formatarValor(i.valor_estimado)}</span>
+        <span>propostas até: ${formatarData(i.encerramento_proposta)}</span>
+        ${i.link ? `<a href="${i.link}" target="_blank" rel="noopener">ver edital →</a>` : ""}
+      </div>
+    </div>
+  `).join("");
+}
+
+document.getElementById("filtros").addEventListener("click", (e) => {
+  if (e.target.tagName !== "BUTTON") return;
+  document.querySelectorAll("#filtros button").forEach(b => b.classList.remove("ativo"));
+  e.target.classList.add("ativo");
+  filtroAtual = e.target.dataset.cat;
+  render();
+});
+
+fetch("data.json?_=" + Date.now())
+  .then(r => r.json())
+  .then(json => {
+    TODOS = json.itens || [];
+    const el = document.getElementById("atualizado");
+    if (json.gerado_em){
+      el.textContent = "última verificação: " + new Date(json.gerado_em).toLocaleString("pt-BR");
+    }
+    render();
+  })
+  .catch(() => {
+    document.getElementById("lista").innerHTML =
+      '<p class="vazio">Ainda não há dados — o robô roda 2x por dia e vai popular este painel automaticamente.</p>';
+  });
+</script>
+
+</body>
+</html>
