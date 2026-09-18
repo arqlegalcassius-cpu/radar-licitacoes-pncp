@@ -128,6 +128,9 @@ def match_categoria(objeto: str, info_complementar: str = ""):
 # HTTP helpers (sem dependências externas — só urllib)
 # --------------------------------------------------------------------------
 
+ULTIMOS_ERROS = []  # acumula erros de rede/API para diagnóstico (data/debug.json)
+
+
 def http_get_json(url: str, tentativas: int = 3, espera: float = 2.0):
     ultimo_erro = None
     for i in range(tentativas):
@@ -141,11 +144,17 @@ def http_get_json(url: str, tentativas: int = 3, espera: float = 2.0):
         except urllib.error.HTTPError as e:
             if e.code == 204:
                 return {"data": [], "totalPaginas": 0}
-            ultimo_erro = e
+            try:
+                corpo_erro = e.read().decode("utf-8")[:300]
+            except Exception:  # noqa: BLE001
+                corpo_erro = ""
+            ultimo_erro = f"HTTP {e.code}: {corpo_erro}"
         except Exception as e:  # noqa: BLE001
-            ultimo_erro = e
+            ultimo_erro = f"{type(e).__name__}: {e}"
         time.sleep(espera * (i + 1))
     print(f"[aviso] falha ao consultar {url}: {ultimo_erro}", file=sys.stderr)
+    if len(ULTIMOS_ERROS) < 5:
+        ULTIMOS_ERROS.append({"url": url, "erro": ultimo_erro})
     return {"data": [], "totalPaginas": 0}
 
 
@@ -412,6 +421,7 @@ def main():
     save_json(LOG_PATH, log)
 
     debug["novos_apos_filtro"] = len(novos)
+    debug["erros"] = ULTIMOS_ERROS
     save_json(os.path.join(DATA_DIR, "debug.json"), debug)
 
 
