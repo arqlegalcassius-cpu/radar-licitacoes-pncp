@@ -14,5 +14,19 @@
     "8": 0
   },
   "amostra_objetos": [],
-  "novos_apos_filtro": 0
+  "novos_apos_filtro": 0,
+  "erros": [
+    {
+      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=500",
+      "erro": "HTTP 400: {\"message\":\"Tamanho de página inválido\",\"path\":\"/pncp-consulta/v1/contratacoes/publicacao\",\"timestamp\":\"2026-09-17T22:42:24.238-03:00\",\"status\":\"400\",\"error\":\"Bad Request\"}"
+    },
+    {
+      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=5&pagina=1&tamanhoPagina=500",
+      "erro": "HTTP 400: {\"message\":\"Tamanho de página inválido\",\"path\":\"/pncp-consulta/v1/contratacoes/publicacao\",\"timestamp\":\"2026-09-17T22:43:15.766-03:00\",\"status\":\"400\",\"error\":\"Bad Request\"}"
+    },
+    {
+      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=8&pagina=1&tamanhoPagina=500",
+      "erro": "HTTP 400: {\"message\":\"Tamanho de página inválido\",\"path\":\"/pncp-consulta/v1/contratacoes/publicacao\",\"timestamp\":\"2026-09-17T22:43:29.268-03:00\",\"status\":\"400\",\"error\":\"Bad Request\"}"
+    }
+  ]
 }
