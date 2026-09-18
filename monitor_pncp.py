@@ -36,20 +36,28 @@ from datetime import datetime, timedelta, timezone
 
 PNCP_BASE = "https://pncp.gov.br/api/consulta/v1"
 
+def env_or_default(name: str, default: str) -> str:
+    """Como os.environ.get, mas trata string vazia como 'não definido'.
+    Necessário porque o GitHub Actions envia uma env var VAZIA (não ausente)
+    quando uma repository variable opcional não foi configurada."""
+    valor = os.environ.get(name, "")
+    return valor if valor.strip() else default
+
+
 # UFs a monitorar. Lista vazia = Brasil inteiro (todas as UFs de uma vez,
 # a própria API já devolve nacionalmente quando "uf" não é informado).
-UFS = [s.strip().upper() for s in os.environ.get("UFS", "").split(",") if s.strip()]
+UFS = [s.strip().upper() for s in env_or_default("UFS", "").split(",") if s.strip()]
 
 # Modalidades de contratação relevantes para obras/serviços de engenharia
 # (tabela de domínio oficial do PNCP):
 #   2 = Diálogo Competitivo | 4 = Concorrência Eletrônica | 5 = Concorrência Presencial
 #   6 = Pregão Eletrônico    | 8 = Dispensa de Licitação
 # Por padrão usamos as modalidades típicas de obras: Concorrência e Dispensa.
-MODALIDADES = [int(m) for m in os.environ.get("MODALIDADES", "4,5,8").split(",") if m.strip()]
+MODALIDADES = [int(m) for m in env_or_default("MODALIDADES", "4,5,8").split(",") if m.strip()]
 
 # Janela de datas: quantos dias para trás olhar a cada execução.
 # 2 dias dá uma margem de segurança contra falhas/atrasos de execução.
-DIAS_RETROATIVOS = int(os.environ.get("DIAS_RETROATIVOS", "2"))
+DIAS_RETROATIVOS = int(env_or_default("DIAS_RETROATIVOS", "2"))
 
 TAMANHO_PAGINA = 500  # máximo permitido pela API
 
