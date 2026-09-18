@@ -9,42 +9,42 @@
     8
   ],
   "total_bruto_por_modalidade": {
-    "4": 391,
-    "5": 33,
-    "8": 4710
+    "4": 246,
+    "5": 0,
+    "8": 0
   },
   "amostra_objetos": [
-    "Contratação de concessão onerosa de uso do espaço físico destinado à implantação e exploração de serviços de lanchonete, com área total de 45,62 m², n",
-    "Contratação de empresa de engenharia para execução das obras de Requalificação da Praça Amândio Ferraz, no Município de Belo Campo-BA.",
-    "contratação de empresa especializada de execução das obras de construção de 05 (cinco) Praças Públicas no Município de Juazeiro/BA",
-    "Contratação Integrada de empresa para elaboração dos Projetos Básico e Executivo de Engenharia e execução das obras de duplicação, restauração com mel",
-    "PAVIMENTAÇÃO EM PARALELEPIPEDO EM DIVERSAS RUAS NO BAIRRO LUIS ALVES, NO MUNICIPIO DE LIMOEIRO DO NORTE-CE",
-    "CONSTRUÇÃO DE PRAÇA DA IGREJA DA LOCALIDADE DE LAMEIRÃO NO MUNICIPIO DE COREAÚ/CE, JUNTO A SECRETARIA DE INFRAESTRUTURA E DESENVOLVIMENTO URBANO",
-    "PRESTAÇÃO, NO MODELO FACILITIES, DE SERVIÇOS DE MANUTENÇÃO PREVENTIVA E CORRETIVA DE AMBIENTES, COMPREENDENDO TODA A INFRAESTRUTURA, BEM COMO SERVIÇOS",
-    "Contratação de empresa especializada para construção de nova entrada de energia elétrica, incluindo subestação de energia, para o Centro Arquivístico ",
-    "Contratação de serviços especiais de engenharia para a readequação do Sistema Central de Gases Medicinais e readequação do Sistema de Contra Incêndio "
+    "\t\nUPA SUDOESTE - Contratação de empresa especializada para a Execução de obra pública de engenharia para a construção integral da Unidade de Pronto At",
+    "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA EM ENGENHARIA CIVIL PARA A EXECUÇÃO DE PAVIMENTAÇÃO ASFÁLTICA COM CONCRETO BETUMINOSO USINADO A QUENTE (CBUQ), NO",
+    "Contratação de Empresa de Engenharia, para execução de Serviços de Reforma e Ampliação da Escola Municipal Padre Osvaldo Ferreira Carneiro, no Municíp",
+    "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA EXECUÇÃO DE SERVIÇOS DE ROÇO LATERAL MANUAL DE VEGETAÇÃO NAS MARGENS DAS ESTRADAS VICINAIS DO MUNICÍPIO DE M",
+    "Contratação de empresa especializada em engenharia para a execução dos serviços de implantação de praça em Conjunto Habitacional MCMV, no Município de",
+    "Contratação de empresa especializada para a prestação de serviços de ampliação da Unidade Escolar Anilton Ribeiro",
+    "Contratação de empresa especializada para a Execução de Construção de Pontes e Obras de Arte Especiais na Rodovia BR-158/MT, Lote B, trecho: km 201,20",
+    "Contratação de empresa de engenharia para execução da obra de Recuperação Funcional do Pavimento na Rodovia MT-020, Trecho: Entr. MT-251 - Balsa (Lago",
+    "Contratação de empresa especializada para execução da ampliação e adequação da área de recreação infantil externa do CEMEI Pequeno Anjo, no Município "
   ],
-  "novos_apos_filtro": 283,
+  "novos_apos_filtro": 37,
   "erros": [
+    {
+      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=AL",
+      "erro": "HTTP 422: {\"path\":\"/pncp-consulta/v1/contratacoes/publicacao\",\"message\":\"Período inicial e final maior que 365 dias.\",\"error\":\"422 UNPROCESSABLE_ENTITY\",\"timestamp\":\"2026-09-18T17:18:38.722-03:00\",\"status\":\"422\"}"
+    },
     {
       "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=AP",
       "erro": "TimeoutError: The read operation timed out"
     },
     {
       "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=AM",
-      "erro": "HTTP 503: <html><body><h1>503 Service Unavailable</h1>\nNo server is available to handle this request.\n</body></html>\n"
+      "erro": "TimeoutError: The read operation timed out"
     },
     {
-      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=MS",
-      "erro": "HTTP 429: <html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Limite de Requisições Excedido</title>\n</head>\n<body>\n    <h2>Limite de requisições excedido</h2>\n\n    <p>\n        O limite de requisições foi excedido. Aguarde alguns instantes antes de realizar uma nova requisição.\n    </p>\n\n    <p>\n        Seu S"
+      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=BA",
+      "erro": "TimeoutError: The read operation timed out"
     },
     {
-      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=MG",
-      "erro": "HTTP 429: <html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Limite de Requisições Excedido</title>\n</head>\n<body>\n    <h2>Limite de requisições excedido</h2>\n\n    <p>\n        O limite de requisições foi excedido. Aguarde alguns instantes antes de realizar uma nova requisição.\n    </p>\n\n    <p>\n        Seu S"
-    },
-    {
-      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=RJ",
-      "erro": "HTTP 429: <html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Limite de Requisições Excedido</title>\n</head>\n<body>\n    <h2>Limite de requisições excedido</h2>\n\n    <p>\n        O limite de requisições foi excedido. Aguarde alguns instantes antes de realizar uma nova requisição.\n    </p>\n\n    <p>\n        Seu S"
+      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=CE",
+      "erro": "HTTP 500: Erro na comunicação com o banco de dados."
     }
   ]
 }
