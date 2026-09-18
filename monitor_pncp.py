@@ -44,9 +44,18 @@ def env_or_default(name: str, default: str) -> str:
     return valor if valor.strip() else default
 
 
-# UFs a monitorar. Lista vazia = Brasil inteiro (todas as UFs de uma vez,
-# a própria API já devolve nacionalmente quando "uf" não é informado).
-UFS = [s.strip().upper() for s in env_or_default("UFS", "").split(",") if s.strip()]
+TODAS_UFS = [
+    "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS",
+    "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC",
+    "SP", "SE", "TO",
+]
+
+# UFs a monitorar. Vazio = Brasil inteiro.
+# Importante: consultamos UF por UF (em vez de uma única consulta nacional)
+# porque a consulta nacional sem filtro de UF costuma dar timeout no servidor
+# do PNCP quando a janela de datas tem muitos registros.
+_ufs_config = [s.strip().upper() for s in env_or_default("UFS", "").split(",") if s.strip()]
+UFS = _ufs_config or TODAS_UFS
 
 # Modalidades de contratação relevantes para obras/serviços de engenharia
 # (tabela de domínio oficial do PNCP):
@@ -136,7 +145,7 @@ def http_get_json(url: str, tentativas: int = 3, espera: float = 2.0):
     for i in range(tentativas):
         try:
             req = urllib.request.Request(url, headers={"Accept": "*/*"})
-            with urllib.request.urlopen(req, timeout=30) as resp:
+            with urllib.request.urlopen(req, timeout=45) as resp:
                 if resp.status == 204:
                     return {"data": [], "totalPaginas": 0}
                 body = resp.read().decode("utf-8")
