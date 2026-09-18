@@ -9,23 +9,40 @@
     8
   ],
   "total_bruto_por_modalidade": {
-    "4": 0,
-    "5": 0,
-    "8": 0
+    "4": 71,
+    "5": 3,
+    "8": 3208
   },
-  "amostra_objetos": [],
-  "novos_apos_filtro": 0,
+  "amostra_objetos": [
+    "AMPLIAÇÃO E REQUALIFICAÇÃO DO PÓRTICO DE ENTRADA DO MUNICÍPIO DE PRACUÚBA-AP.",
+    "Registro de Preços para futura e eventual contratação de empresa especializada em engenharia especializada \nna prestação de serviços de manutenção pre",
+    "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA EXECUÇÃO DE OBRA DE REFORMA E ADEQUAÇÃO DA CÂMARA MUNICIPAL DE PORTEIRINHA/MG.",
+    "[LICITANET] - Contratação de Empresa Especializada para Execução da Obra de Pavimentação Asfáltica em CBUQ no Trecho 1 da estrada vicinal de acesso ao",
+    "EXECUÇÃO DE OBRAS E SERVIÇOS DE ENGENHARIA PARA A EXECUÇÃO DE REFORMA E AMPLIAÇÃO DA ESCOLA MUNICIPAL BENJAMIM COSTANT, NO MUNICIPIO DE SÃO JOÃO DO PA",
+    "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA ELABORAÇÃO E EXECUÇÃO DE TRABALHO SOCIAL EM OBRAS DE SANEAMENTO, conforme especificações e quantidades estab",
+    "Obras de contenção de encosta na Travessa Firmino e Travessa Ireno, nº 5 – Comunidade do Borel – Tijuca – AP 2.2 – RA VIII",
+    "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA EM ENGENHARIA PARA A PAVIMENTAÇÃO E CONSTRUÇÃO DE INFRAESTRUTURA DE ACESSO À PRAÇA FINLÂNDIA, EM ITATIAIA RJ (REV"
+  ],
+  "novos_apos_filtro": 123,
   "erros": [
     {
-      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50",
+      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=AM",
       "erro": "TimeoutError: The read operation timed out"
     },
     {
-      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=5&pagina=1&tamanhoPagina=50",
+      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=BA",
+      "erro": "HTTP 500: Erro na comunicação com o banco de dados."
+    },
+    {
+      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=CE",
       "erro": "TimeoutError: The read operation timed out"
     },
     {
-      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=8&pagina=1&tamanhoPagina=50",
+      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=DF",
+      "erro": "TimeoutError: The read operation timed out"
+    },
+    {
+      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=ES",
       "erro": "TimeoutError: The read operation timed out"
     }
   ]
