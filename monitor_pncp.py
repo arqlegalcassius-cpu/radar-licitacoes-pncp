@@ -316,10 +316,23 @@ def main():
 
     ufs_para_consultar = UFS or [""]  # "" = nacional, sem filtro de UF
 
+    debug = {
+        "janela": {"data_inicial": data_inicial, "data_final": data_final},
+        "modalidades_consultadas": MODALIDADES,
+        "total_bruto_por_modalidade": {},
+        "amostra_objetos": [],
+    }
+
     novos = []
     for modalidade in MODALIDADES:
         for uf in ufs_para_consultar:
             itens = fetch_contratacoes(modalidade, data_inicial, data_final, uf)
+            debug["total_bruto_por_modalidade"][str(modalidade)] = (
+                debug["total_bruto_por_modalidade"].get(str(modalidade), 0) + len(itens)
+            )
+            if len(debug["amostra_objetos"]) < 8:
+                for it in itens[:3]:
+                    debug["amostra_objetos"].append(it.get("objetoCompra", "")[:150])
             for item in itens:
                 categoria = match_categoria(
                     item.get("objetoCompra", ""), item.get("informacaoComplementar", "")
@@ -397,6 +410,9 @@ def main():
     log["gerado_em"] = hoje.isoformat()
     log["itens"] = (novos + log.get("itens", []))[:MAX_LOG_ITEMS]
     save_json(LOG_PATH, log)
+
+    debug["novos_apos_filtro"] = len(novos)
+    save_json(os.path.join(DATA_DIR, "debug.json"), debug)
 
 
 if __name__ == "__main__":
