@@ -1,0 +1,3 @@
+# Nenhuma dependência externa é necessária: o script usa apenas a
+# biblioteca padrão do Python (urllib, json, etc.) para evitar problemas
+# de instalação no GitHub Actions. Mantido aqui por clareza / futuras libs.
