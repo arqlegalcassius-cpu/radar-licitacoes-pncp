@@ -1,7 +1,7 @@
 {
   "janela": {
-    "data_inicial": "20260916",
-    "data_final": "20260918"
+    "data_inicial": "20260917",
+    "data_final": "20260919"
   },
   "modalidades_consultadas": [
     4,
@@ -9,42 +9,41 @@
     8
   ],
   "total_bruto_por_modalidade": {
-    "4": 246,
-    "5": 0,
-    "8": 0
+    "4": 382,
+    "5": 27,
+    "8": 2525
   },
   "amostra_objetos": [
-    "\t\nUPA SUDOESTE - Contratação de empresa especializada para a Execução de obra pública de engenharia para a construção integral da Unidade de Pronto At",
-    "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA EM ENGENHARIA CIVIL PARA A EXECUÇÃO DE PAVIMENTAÇÃO ASFÁLTICA COM CONCRETO BETUMINOSO USINADO A QUENTE (CBUQ), NO",
-    "Contratação de Empresa de Engenharia, para execução de Serviços de Reforma e Ampliação da Escola Municipal Padre Osvaldo Ferreira Carneiro, no Municíp",
-    "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA EXECUÇÃO DE SERVIÇOS DE ROÇO LATERAL MANUAL DE VEGETAÇÃO NAS MARGENS DAS ESTRADAS VICINAIS DO MUNICÍPIO DE M",
-    "Contratação de empresa especializada em engenharia para a execução dos serviços de implantação de praça em Conjunto Habitacional MCMV, no Município de",
-    "Contratação de empresa especializada para a prestação de serviços de ampliação da Unidade Escolar Anilton Ribeiro",
-    "Contratação de empresa especializada para a Execução de Construção de Pontes e Obras de Arte Especiais na Rodovia BR-158/MT, Lote B, trecho: km 201,20",
-    "Contratação de empresa de engenharia para execução da obra de Recuperação Funcional do Pavimento na Rodovia MT-020, Trecho: Entr. MT-251 - Balsa (Lago",
-    "Contratação de empresa especializada para execução da ampliação e adequação da área de recreação infantil externa do CEMEI Pequeno Anjo, no Município "
+    "CONSTRUÇÃO DE CAMPO DE FUTEBOL COM GRAMA SINTÉTICA, MEIA QUADRA DE BASQUETE, PARQUINHO\r\nINFANTIL E PISTA DE CAMINHADA (TIPO B) NO MUNICÍPIO DE COQUEIR",
+    "O objeto da presente licitação é a contratação de empresa de engenharia especializada para a elaboração de estudos e projetos, gerenciamento, supervis",
+    "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA PRESTAÇÃO DE SERVIÇOS CONTINUADOS DE OPERAÇÃO E MANUTENÇÃO DOS SISTEMAS E OBRAS DO PROJETO RENASCE SALGADINH",
+    "Registro de Preços para futura e eventual contratação de empresa especializada em engenharia especializada \nna prestação de serviços de manutenção pre",
+    "Contratação de empresa especializada para execução de Pavimentação Asfáltica em Via Urbana, com Drenagem e Calçadas, na Rua C1, bairro Vila Amazonas, ",
+    "Contratação de OBRA de Construção de Cerca no Destacamento de Controle do Espaço Aéreo – Manaus\n(DTCEA-MN) , em proveito do Quarto Centro Integrado De",
+    "[Portal de Compras Públicas] - REQUALIFICAÇÃO DO SISTEMA VIÁRIO COM SERVIÇO DE DRENAGEM PROFUNDA NA SEDE DO MUNICÍPIO DE NOVO AIRÃO/AM",
+    "[Portal de Compras Públicas] - SERVIÇOS DE ADEQUAÇÃO DE VIAS URBANAS DO MUNICÍPIO DE MANICORÉ/AM."
   ],
-  "novos_apos_filtro": 37,
+  "novos_apos_filtro": 111,
   "erros": [
     {
-      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=AL",
-      "erro": "HTTP 422: {\"path\":\"/pncp-consulta/v1/contratacoes/publicacao\",\"message\":\"Período inicial e final maior que 365 dias.\",\"error\":\"422 UNPROCESSABLE_ENTITY\",\"timestamp\":\"2026-09-18T17:18:38.722-03:00\",\"status\":\"422\"}"
+      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260917&dataFinal=20260919&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=DF",
+      "erro": "HTTP 429: <html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Limite de Requisições Excedido</title>\n</head>\n<body>\n    <h2>Limite de requisições excedido</h2>\n\n    <p>\n        O limite de requisições foi excedido. Aguarde alguns instantes antes de realizar uma nova requisição.\n    </p>\n\n    <p>\n        Seu S"
     },
     {
-      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=AP",
-      "erro": "TimeoutError: The read operation timed out"
+      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260917&dataFinal=20260919&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=ES",
+      "erro": "HTTP 429: <html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Limite de Requisições Excedido</title>\n</head>\n<body>\n    <h2>Limite de requisições excedido</h2>\n\n    <p>\n        O limite de requisições foi excedido. Aguarde alguns instantes antes de realizar uma nova requisição.\n    </p>\n\n    <p>\n        Seu S"
     },
     {
-      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=AM",
-      "erro": "TimeoutError: The read operation timed out"
+      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260917&dataFinal=20260919&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=PB",
+      "erro": "HTTP 429: <html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Limite de Requisições Excedido</title>\n</head>\n<body>\n    <h2>Limite de requisições excedido</h2>\n\n    <p>\n        O limite de requisições foi excedido. Aguarde alguns instantes antes de realizar uma nova requisição.\n    </p>\n\n    <p>\n        Seu S"
     },
     {
-      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=BA",
-      "erro": "TimeoutError: The read operation timed out"
+      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260917&dataFinal=20260919&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=RR",
+      "erro": "HTTP 429: <html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Limite de Requisições Excedido</title>\n</head>\n<body>\n    <h2>Limite de requisições excedido</h2>\n\n    <p>\n        O limite de requisições foi excedido. Aguarde alguns instantes antes de realizar uma nova requisição.\n    </p>\n\n    <p>\n        Seu S"
     },
     {
-      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260916&dataFinal=20260918&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=CE",
-      "erro": "HTTP 500: Erro na comunicação com o banco de dados."
+      "url": "https://pncp.gov.br/api/consulta/v1/contratacoes/publicacao?dataInicial=20260917&dataFinal=20260919&codigoModalidadeContratacao=4&pagina=1&tamanhoPagina=50&uf=SC",
+      "erro": "HTTP 429: <html>\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Limite de Requisições Excedido</title>\n</head>\n<body>\n    <h2>Limite de requisições excedido</h2>\n\n    <p>\n        O limite de requisições foi excedido. Aguarde alguns instantes antes de realizar uma nova requisição.\n    </p>\n\n    <p>\n        Seu S"
     }
   ]
 }
